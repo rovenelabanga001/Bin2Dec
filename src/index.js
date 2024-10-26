@@ -6,17 +6,23 @@ binaryForm.addEventListener("submit", (e) => {
   const errorMessage = document.getElementById("error-message");
   const inputValue = binaryInput.value;
 
+  outputContainer.textContent = " ";
+
   //check if the value is exactly 8 characters
   if (inputValue.length !== 8) {
     e.preventDefault();
     errorMessage.textContent = "Input must be exactly 8 characters";
     errorMessage.style.display = "block";
+    outputContainer.textContent = "";
+    return;
   }
   //check if the value contains only 0 or 1
   else if (!/^[01]+$/.test(inputValue)) {
     e.preventDefault();
     errorMessage.textContent = "Input must be only 0s or 1s";
     errorMessage.style.display = "block";
+    outputContainer.textContent = "";
+    return;
   } else {
     errorMessage.style.display = "none";
   }
@@ -27,7 +33,7 @@ binaryForm.addEventListener("submit", (e) => {
 });
 
 function binaryToDecimal(binaryString) {
-  if (!/^[01]+$/.test) {
+  if (!/^[01]+$/.test(binaryString)) {
     throw new Error("Input must be only 0s or 1s");
   }
 
