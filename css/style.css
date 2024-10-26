@@ -3,9 +3,9 @@
   margin: 0;
   padding: 0;
 }
-/* body {
-  background: linear-gradient(to bottom, pink, purple);
-} */
+body {
+  width: 100%;
+}
 main {
   display: flex;
   flex-direction: column;
